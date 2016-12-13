@@ -4,12 +4,19 @@
 {% block title %}Flasky{% endblock %}
 
 {% block page_content %}
-<h1>Hello,
-    {% if name %}
-        {{ name }}
+<div class="page-header">
+    <h1>Hello,
+        {% if name %}
+            {{ name }}
+        {% else %}
+            Stranger
+        {% endif %}
+    </h1>
+    {% if not known %}
+    <P>Pleased to meet you!</P>
     {% else %}
-        Stranger
+    <p>Happy to see you again</p>
     {% endif %}
-</h1>
+</div>
 {{ wtf.quick_form(form) }}
 {% endblock %}
